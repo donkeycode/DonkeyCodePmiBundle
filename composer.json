@@ -1,0 +1,20 @@
+{
+    "name": "donkeycode/pmi-bundle",
+    "description": "An interface to show propel datas",
+    "type": "symfony-bundle",
+    "require": {
+        "twig/twig": "*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Cedric LOMBARDOT",
+            "email": "cedric.lombardot@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "DonkeyCode\\PmiBundle\\": ""
+        }
+    }
+}

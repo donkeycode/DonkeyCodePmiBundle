@@ -1,0 +1,4 @@
+
+{% for table in tables %}
+    <a href="{{ path('pmi_table', { table: table[0] }) }}" class="nav-link"><i class="icon-drop"></i> {{ table[0] }}</a>
+{% endfor %}

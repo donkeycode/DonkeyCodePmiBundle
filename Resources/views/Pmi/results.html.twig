@@ -1,0 +1,56 @@
+{% extends "DonkeyCodePmiBundle:Pmi:layout.html.twig" %}
+
+{% block body %}
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+        <div class="card-header">
+            <i class="fa fa-align-justify"></i> Query
+        </div>
+        <div class="card-body">
+            {{ form(form) }}
+        </div>
+        </div>
+    </div>
+<!--/.col-->
+</div>
+<!--/.row-->
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+        <div class="card-header">
+            <i class="fa fa-align-justify"></i> {{ table }}
+        </div>
+        <div class="card-body">
+            {% if datas|length == 0 %}
+                <div class="alert alert-info">No results found</div>
+            {% else %}
+                <table class="table table-responsive-sm table-striped">
+                    <thead>
+                        <tr>
+                            {% for col in cols %}
+                                <th>{{ col }}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in datas %}
+                        <tr>
+                            {% for col in cols %}
+                                <td>{{ row[col] }}</td>
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
+            
+        </div>
+        </div>
+    </div>
+<!--/.col-->
+</div>
+<!--/.row-->
+
+{% endblock body %}
